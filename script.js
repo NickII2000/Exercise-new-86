@@ -2,6 +2,8 @@
 
 console.log('Запрос данных...');
 
+const req = new Promise();
+
 setTimeout(() => {
     console.log('Подготовка данных...');
 
