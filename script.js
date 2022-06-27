@@ -16,7 +16,7 @@ const req = new Promise(function (resolve, reject) {
 });
 
 req.then(() => {
-    console.log('Данные получены...');
+    console.log('Данные получены.');
 });
 
 
