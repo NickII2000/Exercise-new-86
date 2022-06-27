@@ -20,8 +20,8 @@ req.then((product) => {
         setTimeout(() => {
             product.status = 'order';
             console.log(product);
-            // resolve(product);
-            reject();
+            resolve(product);
+            // reject();
         }, 2000);
     });
 }).then(data => {
@@ -31,4 +31,8 @@ req.then((product) => {
 }).then(data => {
     data.id = '01';
     console.log(data);
-}).catch(() => console.error('Произошла ошибка!'));
+}).catch(() => {
+    console.error('Произошла ошибка!');
+}).finally(() => {
+    console.log('Finally');
+});
