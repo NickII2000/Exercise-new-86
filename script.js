@@ -24,6 +24,10 @@ req.then((product) => {
         }, 2000);
     });
 }).then(data => {
+    data.modify = true;
+    console.log(data);
+    return data;
+}).then(data => {
     data.id = '0123456789';
     console.log(data);
 });
