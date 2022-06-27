@@ -28,6 +28,6 @@ req.then((product) => {
     console.log(data);
     return data;
 }).then(data => {
-    data.id = '0123456789';
+    data.id = '01';
     console.log(data);
 });
