@@ -2,19 +2,25 @@
 
 console.log('Запрос данных...');
 
-const req = new Promise();
-
-setTimeout(() => {
-    console.log('Подготовка данных...');
-
-    const product = {
-        name: 'TV',
-        price: 2000,
-    };
-
+const req = new Promise(function (resolve, reject) {
     setTimeout(() => {
-        product.status = 'order';
-        console.log(product);
-    }, 2000);
+        console.log('Подготовка данных...');
 
-}, 2000);
+        const product = {
+            name: 'TV',
+            price: 2000,
+        };
+
+        resolve();
+    }, 2000);
+});
+
+req.then(() => {
+    console.log('Данные получены...');
+});
+
+
+// setTimeout(() => {
+//     product.status = 'order';
+//     console.log(product);
+// }, 2000);
