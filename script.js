@@ -16,11 +16,8 @@ const req = new Promise(function (resolve, reject) {
 });
 
 req.then(() => {
-    console.log('Данные получены.');
+    setTimeout(() => {
+        product.status = 'order';
+        console.log(product);
+    }, 2000);
 });
-
-
-// setTimeout(() => {
-//     product.status = 'order';
-//     console.log(product);
-// }, 2000);
