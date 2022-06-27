@@ -11,13 +11,19 @@ const req = new Promise(function (resolve, reject) {
             price: 2000,
         };
 
-        resolve();
+        resolve(product);
     }, 2000);
 });
 
-req.then(() => {
-    setTimeout(() => {
-        product.status = 'order';
-        console.log(product);
-    }, 2000);
+req.then((product) => {
+    const req2 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            product.status = 'order';
+            console.log(product);
+        }, 2000);
+    });
+
+    req2.then(data => {
+        console.log(data);
+    });
 });
