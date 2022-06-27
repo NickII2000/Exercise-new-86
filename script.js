@@ -16,12 +16,16 @@ const req = new Promise(function (resolve, reject) {
 });
 
 req.then((product) => {
-    return new Promise((resolve, reject) => {
+    const req2 = new Promise((resolve, reject) => {
         setTimeout(() => {
             product.status = 'order';
             console.log(product);
+            resolve(23);
         }, 2000);
+
     });
-}).then(data => {
-    console.log(data);
+
+    req2.then(data => {
+        console.log(data);
+    });
 });
